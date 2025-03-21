@@ -27,7 +27,7 @@ const FloatingCards = React.memo(() => {
         }
       };
     });
-  }, []); // Empty dependency array means this only runs once
+  }, [emojis]); // Add emojis as a dependency
 
   // Force hardware acceleration and isolation with useEffect
   useEffect(() => {

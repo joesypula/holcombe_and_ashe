@@ -354,6 +354,7 @@ function App() {
                 height="320" 
                 frameBorder="0" 
                 allowFullScreen="" 
+                title="Holcombe & Ashe Spotify Player"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                 loading="lazy"
                 className="spotify-player"
