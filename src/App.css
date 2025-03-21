@@ -141,11 +141,11 @@ body{
 }
 
 .spotify-player {
-    width: 60%;
-    border-radius: 10px;
+    width: 85%;
+    border-radius: 12px;
     margin: 0;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 80px;
