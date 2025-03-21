@@ -351,7 +351,7 @@ function App() {
                 style={{ borderRadius: '12px' }}
                 src="https://open.spotify.com/embed/artist/3XkauRJ3sLmNpkXWjLhbC3?utm_source=generator&theme=0" 
                 width="100%" 
-                height="320" 
+                height="390" 
                 frameBorder="0" 
                 allowFullScreen="" 
                 title="Holcombe & Ashe Spotify Player"
