@@ -1,0 +1,31 @@
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  pointer-events: none; /* Let clicks pass through */
+  overflow: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+.confetti-piece {
+  position: absolute;
+  font-size: 24px;
+  user-select: none;
+  will-change: transform, left, top;
+  z-index: 201;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Make confetti smaller on small screens */
+@media screen and (max-width: 480px) {
+  .confetti-piece {
+    font-size: 20px;
+  }
+} 
