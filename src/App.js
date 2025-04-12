@@ -320,38 +320,45 @@ function App() {
       {/* Completely isolated from main app render cycle */}
       <BackgroundEmojis />
       
-    <div className="container">
-        <div 
-          className="backgroundVideo"
-          style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/background.jpg)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
-        <div className="blackScreen" />
-        
-        <div className={`card-container ${isFlipped ? 'flipped' : ''} ${!hasInitialFlip ? 'show-back' : ''}`}>
-          <div className="card-flipper">
-            {/* Front side with Spotify player */}
-            <div 
-              ref={containerRef}
-              className="music-Container card-front"
-              style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/card.png)`,
-                backgroundSize: '105% 105%',
-                backgroundPosition: 'center center',
-                backgroundRepeat: 'no-repeat',
-                backgroundOrigin: 'padding-box',
-                cursor: hasInitialFlip ? 'grab' : 'default'
-              }}
-            >
+    <div className="container" style={{
+      backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/banner.png)`,
+      backgroundSize: '200px auto',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'repeat',
+      backgroundColor: 'rgba(0, 0, 0, 0.3)'
+    }}>
+      <div 
+        className="backgroundVideo"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/background.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      <div className="blackScreen" />
+      
+      <div className={`card-container ${isFlipped ? 'flipped' : ''} ${!hasInitialFlip ? 'show-back' : ''}`}>
+        <div className="card-flipper">
+          {/* Front side with Spotify player */}
+          <div 
+            ref={containerRef}
+            className="music-Container card-front"
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/card.png)`,
+              backgroundSize: '105% 105%',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat',
+              backgroundOrigin: 'padding-box',
+              cursor: hasInitialFlip ? 'grab' : 'default'
+            }}
+          >
+            <div className="spotify-player-container">
               <iframe 
                 style={{ borderRadius: '12px' }}
                 src="https://open.spotify.com/embed/artist/3XkauRJ3sLmNpkXWjLhbC3?utm_source=generator&theme=0" 
                 width="100%" 
-                height="320" 
+                height="100%" 
                 frameBorder="0" 
                 allowFullScreen="" 
                 title="Holcombe & Ashe Spotify Player"
@@ -360,30 +367,31 @@ function App() {
                 className="spotify-player"
               />
             </div>
-            
-            {/* Back side - playing card back */}
-            <div 
-              className="music-Container card-back"
-              style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/card.png)`,
-                backgroundSize: '115% 115%',
-                backgroundPosition: 'center center',
-                backgroundRepeat: 'no-repeat',
-                backgroundOrigin: 'padding-box'
-              }}
-            >
-              <div className="card-back-pattern"></div>
-            </div>
-        </div>
+          </div>
           
-          {/* Button to trigger flip */}
-          <button className="flip-button" onClick={handleFlipClick} disabled={isAnimating}>
-            Get Lucky
-          </button>
+          {/* Back side - playing card back */}
+          <div 
+            className="music-Container card-back"
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/Assets/Images/card.png)`,
+              backgroundSize: '115% 115%',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat',
+              backgroundOrigin: 'padding-box'
+            }}
+          >
+            <div className="card-back-pattern"></div>
+        </div>
         </div>
         
-        {/* Render confetti when button is clicked */}
-        {showConfetti && <Confetti />}
+        {/* Button to trigger flip */}
+        <button className="flip-button" onClick={handleFlipClick} disabled={isAnimating}>
+          Get Lucky
+        </button>
+      </div>
+      
+      {/* Render confetti when button is clicked */}
+      {showConfetti && <Confetti />}
     </div>
     </>
   );

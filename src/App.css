@@ -21,7 +21,7 @@ body{
     align-items: center;
     color: var(--mainColor);
     font-family: 'Poppins';   
-    flex-direction: column; /* Ensure proper vertical layout */
+    flex-direction: column;
     position: relative;
 }
 
@@ -140,15 +140,23 @@ body{
     object-fit: contain;
 }
 
-.spotify-player {
+.spotify-player-container {
     width: 85%;
-    border-radius: 12px;
-    margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 80px;
+    transform: translate(-50%, -50%) scaleY(1.08);
+    transform-origin: center bottom;
+    margin-top: 100px;
+    height: 351px;
+    overflow: hidden;
+}
+
+.spotify-player {
+    width: 100%;
+    height: 100% !important;
+    border-radius: 12px;
+    max-height: 351px;
 }
 
 /* Mobile Responsive Design */
@@ -160,10 +168,13 @@ body{
         border-radius: 20px;
     }
 
-    .spotify-player {
+    .spotify-player-container {
         width: 90%;
-        height: 240px;
         margin-top: 40px;
+    }
+    
+    .spotify-player {
+        height: 240px;
     }
     
     .card-container {
@@ -267,7 +278,7 @@ body{
 
 .flip-button {
   position: absolute;
-  top: -70px; /* Increased space above card */
+  top: -70px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -280,7 +291,10 @@ body{
   font-weight: 600;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
-  z-index: 100;
+  z-index: 1000;
+  width: fit-content;
+  margin: 0 auto;
+  white-space: nowrap;
 }
 
 .flip-button:hover {
@@ -439,6 +453,13 @@ body{
     33% { -webkit-transform: translate3d(2px, 4px, 0) rotate(0.4deg); }
     66% { -webkit-transform: translate3d(-2px, 5px, 0) rotate(-0.4deg); }
     100% { -webkit-transform: translate3d(0, 0, 0) rotate(0deg); }
+  }
+  
+  /* iOS Safari specific styles */
+  .spotify-player-container {
+    transform: translate(-50%, -50%) scaleY(1.12);
+    transform-origin: center bottom;
+    margin-top: 100px;
   }
 }
 
