@@ -354,16 +354,15 @@ function App() {
             }}
           >
             <div className="spotify-player-container">
-              <iframe 
-                style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/embed/artist/3XkauRJ3sLmNpkXWjLhbC3?utm_source=generator&theme=0" 
-                width="100%" 
-                height="100%" 
-                frameBorder="0" 
-                allowFullScreen="" 
-                title="Holcombe & Ashe Spotify Player"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              <iframe
+                src="https://open.spotify.com/embed/album/1UgPBxAdOJ3wUBDXDiwvwh?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
+                style={{ borderRadius: '12px' }}
                 className="spotify-player"
               />
             </div>
